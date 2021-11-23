@@ -1,0 +1,54 @@
+/*
+Author: Shelby Sutter
+Program: HW4
+Date Last Modified: November 22, 2021
+Problem:
+Create a few different social media profiles for classes Twitter and Instagram
+ where we can show their followers and followed.
+*/
+
+#include <iostream>
+using namespace std;
+#include "Twitter.h"
+#include "Instagram.h"
+
+struct Profile{
+    int userID;
+    string username;
+};
+
+ostream & operator<<(ostream &obj, Profile p){
+    obj<<p.userID<<" "<<p.username<<endl;
+    return obj;
+}
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    Profile p1{1,"Jack"}, p2{2,"Frost"};
+    Twitter<string> TS;
+  /*  TS.addFollower("Elsa");
+    TS.addFollower("Anna");
+    TS.addFollower("Jamie");
+    TS.RT();
+    TS.getRetweetCount();
+    TS.setIsPrivate(false);
+    cout<<TS.getRetweetCount();
+    TS.setRetweetCount(13);
+    cout<<TS.getRetweetCount()<<endl;
+    TS.addFollowed("Aster");
+    cout<<TS.getFollwedCount()<<endl;
+    cout<<TS.getFollwerCount()<<endl;
+    TS.setHandler("Sandy");
+    cout<<TS.getHandler()<<endl;
+   */ TS.displayFollowed();
+    Twitter<Profile> TP;
+  //  TP.addFollower(p1);
+   // TP.addFollower(p2);
+  //  TP.displayFollowed();
+   // TP.RT();
+   // TP.RT();
+   // cout<<TP.getRetweetCount()<<endl;
+    Instagram<string> IS;
+    Instagram<Profile> IP;
+
+    return 0;
+}
